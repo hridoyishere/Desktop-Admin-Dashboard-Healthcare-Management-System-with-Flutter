@@ -24,7 +24,7 @@ class _EmployeePageState extends State<EmployeePage> {
       final matchesRole = _roleFilter == null || e.role == _roleFilter;
       final matchesSearch = _search.isEmpty ||
           e.name.toLowerCase().contains(_search.toLowerCase()) ||
-          e.id.toLowerCase().contains(_search.toLowerCase()) ||
+          e.id!.toLowerCase().contains(_search.toLowerCase()) ||
           e.department.toLowerCase().contains(_search.toLowerCase());
       return matchesRole && matchesSearch;
     }).toList();
@@ -73,7 +73,7 @@ class _EmployeePageState extends State<EmployeePage> {
               ],
               rows: employees.map((e) {
                 return DataRow(cells: [
-                  DataCell(Text(e.id,
+                  DataCell(Text(e.id ?? '',
                       style: const TextStyle(fontWeight: FontWeight.w600))),
                   DataCell(Text(e.name,
                       style: const TextStyle(fontWeight: FontWeight.w500))),

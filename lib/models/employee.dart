@@ -1,7 +1,14 @@
-enum EmployeeRole { doctor, nurse, technician, admin, driver }
+
+enum EmployeeRole {
+  doctor,
+  nurse,
+  technician,
+  admin,
+  driver,
+}
 
 class Employee {
-  final String id;
+  final String? id;
   final String name;
   final EmployeeRole role;
   final String department;
@@ -9,10 +16,15 @@ class Employee {
   final String phone;
   final String email;
   final bool isActive;
+  final String address;
+  final String workingHours;
+  final double rating;
+  final String about;
   final int experience;
+  final String imagePath;
 
   Employee({
-    required this.id,
+    this.id,
     required this.name,
     required this.role,
     required this.department,
@@ -20,6 +32,11 @@ class Employee {
     required this.phone,
     required this.email,
     required this.isActive,
+    required this.address,
+    required this.workingHours,
+    required this.rating,
+    required this.about,
     required this.experience,
+    required this.imagePath,
   });
 }
